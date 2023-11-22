@@ -8,13 +8,14 @@
                 echo '<div class="alert alert-success" role="alert">';
                 echo 'Stok buku masih cukup';
                 echo '</div>';
-            }else{
+
+            ?>   
+            <?php }else{
             echo '<div class="alert alert-warning" role="alert">';
             echo 'Stok buku tersisa sedikit, silahkan ajukan pengadaan buku dibawah ini :';
             echo '</div>';
-            }    ?>
-
-<table class="table table-striped table-bordered">
+            ?>
+            <table class="table table-striped table-bordered">
     <thead class="table-primary">
         <td> ID Buku </td>
         <td> Kategori </td>
@@ -34,6 +35,9 @@
     </tr>
     <?php endforeach ?>
 </table>
+            <?php }?>
+
+
 </div>
 </div>
 </div>
