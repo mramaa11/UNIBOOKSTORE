@@ -1,11 +1,14 @@
 <html>
-    <div>
-        <form method="POST" action="<?= base_url('Home/CariBuku'); ?>" id="form1">
-        <text>Cari Buku</text>
-                <input class="form-control" type="text" id="cari" name="cari">
-                <button type="submit" > cari </button>
-            </div>
-
+<div class="col-md-12">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title"> Data Buku<?= $subjudul; ?> </h3>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="<?= base_url('Home/CariBuku'); ?>" id="form1">
+            <text>Cari Buku</text>
+            <input class="form-control" type="text" id="cari" name="cari" placeholder="Masukan nama buku">
+            <button type="submit" > cari </button>
     <table class="table table-striped table-bordered">
     <thead class="table-primary">
         <td> ID Buku </td>
@@ -26,5 +29,7 @@
     </tr>
     <?php endforeach ?>
 </table>
-
+</div>
+</div>
+</div>
 </html>

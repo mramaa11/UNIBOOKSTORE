@@ -18,8 +18,8 @@
                 </div>';
             }
             ?>
-            <table class="table table-bordered">
-                <thead>
+            <table class="table table-striped table-bordered">
+                <thead class="table-primary">
                     <tr class="text-center">
                     <td> ID Buku </td>
         <td> Kategori </td>
@@ -75,15 +75,15 @@
                     <input type="text" name="kategori" id="kategori" class="form-control" placeholder="Masukan Kategori Buku">
                 </div>
                 <div class="form-group mb-0">
-                    <label for="Nama Buku">Alamat</label>
+                    <label for="Nama Buku">Nama Buku</label>
                     <input type="text" name="nama_buku" id="nama_buku" class="form-control" placeholder="Masukan Nama Buku">
                 </div>
                 <div class="form-group mb-0">
-                    <label for="harga">Kota</label>
+                    <label for="harga">Harga</label>
                     <input type="text" name="harga" id="harga" class="form-control" placeholder="Masukan Harga">
                 </div>
                 <div class="form-group mb-0">
-                    <label for="Stok">Telepon</label>
+                    <label for="Stok">Stok</label>
                     <input type="text" name="stok" id="stok" class="form-control" placeholder="Masukan stok">
                 </div>
                 <div class="form-group mb-0">
@@ -160,7 +160,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Data Yakin Akan Dihapus <?= $value['id_buku']; ?>
+                    Apakah anda yakin akan menghapus <?= $value['nama_buku']; ?>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -197,8 +197,8 @@
                 </div>';
             }
             ?>
-            <table class="table table-bordered">
-                <thead>
+            <table class="table table-striped table-bordered">
+                <thead class="table-primary">
                     <tr class="text-center">
                     <td> ID Penerbit </td>
         <td> Nama </td>
@@ -212,22 +212,21 @@
                 <tbody>
                     <?php foreach ($penerbit as $value) :?>
                         <tr>
-                        <td> <?= $value['id_penerbit'] ?> </td>
+        <td> <?= $value['id_penerbit'] ?> </td>
         <td> <?= $value['nama_penerbit'] ?> </td>
         <td> <?= $value['alamat'] ?> </td>
         <td> <?= $value['kota'] ?> </td>
         <td> <?= $value['telepon'] ?> </td>
         <td>
-                                <button class="btn btn-warning btn-sm btn-flat" data-toggle="modal" data-target="#ubah-datap<?= $value['id_penerbit']; ?>"><i class="fas fa-pencil-alt"></i></button>
-                                <button class="btn btn-danger btn-sm btn-flat" data-toggle="modal" data-target="#hapus-datap<?= $value['id_penerbit']; ?>"><i class="fas fa-trash"></i></button>
+        <button class="btn btn-warning btn-sm btn-flat" data-toggle="modal" data-target="#ubah-datap<?= $value["id_penerbit"]; ?>"><i class="fas fa-pencil-alt"></i></button>
+        <button class="btn btn-danger btn-sm btn-flat" data-toggle="modal" data-target="#hapus-datap<?= $value["id_penerbit"]; ?>"><i class="fas fa-trash"></i></button>
+        </td>
+                        </tr>
                     <?php
                     endforeach;
                     ?>
-                            </td>
-                        </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </div>
@@ -274,7 +273,7 @@
         </div>
 
         <?php foreach ($penerbit as $value) : ?>
-        <div class="modal fade" id="ubah-datap<?= $value['nama_penerbit']; ?>">
+        <div class="modal fade" id="ubah-datap<?= $value['id_penerbit']; ?>">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -319,7 +318,7 @@
         <!-- /.modal-HapusData -->
 <?php foreach ($penerbit as $value) : ?>
     <!-- Modal Hapus Data -->
-    <div class="modal fade" id="hapus-datap<?= $value['nama_penerbit']; ?>">
+    <div class="modal fade" id="hapus-datap<?= $value['id_penerbit']; ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -329,7 +328,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Data Yakin Akan Dihapus <?= $value['nama_penerbit']; ?>
+                    Apakah anda yakin akan meenghapus <?= $value['nama_penerbit']; ?>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
